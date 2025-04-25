@@ -1,23 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller_General\welcome;
+use App\Http\Controllers\Controller_General\services;
+use App\Http\Controllers\Controller_General\login;
+use App\Http\Controllers\Controller_General\user;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [welcome::class, 'home']);
+Route::get('/services', [services::class, 'exams']);
+Route::get('/login', [login::class, 'loginin']);
+Route::get('/user', [user::class, 'id']);
 
-Route::get('/services', function () {
-    return view('Services');
-});
-
-Route::get('/admin', function () {
-    return view('Admin');
-});
-
-Route::get('/user', function () {
-    return view('User');
-});
-
-Route::get('/login', function () {
-    return view('Login');
-});
